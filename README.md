@@ -1,4 +1,4 @@
-# Object Oriented Programming in C
+# Object-oriented programming in C
 
 ## List - Array like List in Dart language
 - [x] showElements - Shows all elements in the list (integer)
