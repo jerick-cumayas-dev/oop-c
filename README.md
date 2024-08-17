@@ -1,6 +1,6 @@
 # Object-oriented programming in C
 
-## List - Array like List in Dart language
+## Dynamic List - Array like List in Dart language
 
 - [x] showElements - Shows all elements in the list (integer)
 - [x] append - Appends a new element at the end of list (integer)
