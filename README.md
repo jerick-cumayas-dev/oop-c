@@ -1,2 +1,2 @@
 # oop-c
-Object Oriented Programming for C
+Object Oriented Programming in C
