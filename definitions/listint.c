@@ -42,7 +42,43 @@ void insertAtIndex(ListInt *self, int value, int index) {
   }
 }
 
+void reverseOrder(ListInt *self) {
+  int *reversed = (int *)malloc(self->capacity * sizeof(int));
+
+  size_t i = 0;
+  size_t j = self->capacity - 1;
+  for (size_t k = 0; k < self->capacity / 2; k++) {
+    reversed[i] = self->data[j];
+    i += 1;
+    j -= 1;
+  }
+
+  self->data = reversed;
+}
+
 bool isEmpty(ListInt *self) { return self->length == 0; }
+
+int getElementAtIndex(ListInt *self, size_t index) {
+  if (index >= 0 && index < self->length) {
+    return self->data[index];
+  }
+  return 0;
+}
+
+ListInt sublist(ListInt *self, size_t start, size_t end) {
+  int difference;
+  if (end > start) {
+    difference = end - start;
+  }
+
+  ListInt sub = initListInt(difference);
+
+  for (size_t i = start; i < end; i++) {
+    sub.append(&sub, self->getElementAtIndex(self, i));
+  }
+
+  return sub;
+}
 
 ListInt initListInt(size_t capacity) {
   ListInt newList;
@@ -53,7 +89,10 @@ ListInt initListInt(size_t capacity) {
 
   newList.showElements = showListElements;
   newList.append = append;
+  newList.reverseOrder = reverseOrder;
   newList.insertAtIndex = insertAtIndex;
+  newList.getElementAtIndex = getElementAtIndex;
+  newList.sublist = sublist;
   newList.isEmpty = isEmpty;
 
   return newList;

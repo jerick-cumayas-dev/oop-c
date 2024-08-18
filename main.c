@@ -31,5 +31,13 @@ int main() {
   printf("Capacity: %zu\n", myList.capacity);
   myList.showElements(&myList);
 
+  printf("\n");
+  myList.reverseOrder(&myList);
+  myList.showElements(&myList);
+
+  printf("\n");
+  ListInt subb = myList.sublist(&myList, 1, 3);
+  myList.showElements(&subb);
+
   return 0;
 }
